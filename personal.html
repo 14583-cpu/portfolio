@@ -1,17 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
-    <title>ประวัติส่วนตัว</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ประวัติส่วนตัว | แฟ้มสะสมผลงาน</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
 </head>
-<body bgcolor="F54927">
-<h1>ประวัติส่วนตัว</h1>
-<img src="images/jo.png" width="200">
-<p>
-  ชื่อ ภาณุภาคย์ ผลมาก<br>
-  ชื่อเล่น โจ<br>
-  วันเกิด 9 เมษายน พ.ศ.2552<br>
-  เบอร์โทร 012-345-6789<br>
-</p>
-<p>โรงเรียนพานทอง</p>
+<body>
+
+<div class="binder">
+
+  <nav class="mobile-tabbar" aria-label="เมนูหลัก (มือถือ)">
+    <a href="index.html">หน้าหลัก</a>
+    <a href="personal.html" aria-current="page">ประวัติส่วนตัว</a>
+    <a href="education.html">ประวัติการศึกษา</a>
+    <a href="awardactivities.html">ผลงาน/กิจกรรม</a>
+    <a href="contact.html">ติดต่อ</a>
+  </nav>
+
+  <nav class="tabs" aria-label="เมนูหลัก">
+    <div class="brand">แฟ้มสะสมผลงาน<span>Student Portfolio</span></div>
+    <a class="tab" href="index.html"><span class="num">01</span> หน้าหลัก</a>
+    <a class="tab" href="personal.html" aria-current="page"><span class="num">02</span> ประวัติส่วนตัว</a>
+    <a class="tab" href="education.html"><span class="num">03</span> ประวัติการศึกษา</a>
+    <a class="tab" href="awardactivities.html"><span class="num">04</span> ผลงานและกิจกรรม</a>
+    <a class="tab" href="contact.html"><span class="num">05</span> ช่องทางติดต่อ</a>
+  </nav>
+
+  <main class="page">
+    <div class="wrap">
+
+      <p class="eyebrow">02 · ประวัติส่วนตัว</p>
+      <h1>ข้อมูลส่วนตัว</h1>
+
+      <section class="hero" style="margin-top:10px;">
+        <div class="card" style="margin-bottom:0;">
+          <table class="timeline">
+            <tr><th>ชื่อ–นามสกุล</th><td>[ชื่อ นามสกุล]</td></tr>
+            <tr><th>ชื่อเล่น</th><td>[ชื่อเล่น]</td></tr>
+            <tr><th>วันเกิด</th><td>[วัน/เดือน/ปีเกิด]</td></tr>
+            <tr><th>ที่อยู่</th><td>[จังหวัด / อำเภอ]</td></tr>
+            <tr><th>โรงเรียน</th><td>[ชื่อโรงเรียน]</td></tr>
+            <tr><th>ระดับชั้น</th><td>มัธยมศึกษาปีที่ 6 แผนการเรียน [ระบุ]</td></tr>
+            <tr><th>คติประจำใจ</th><td>“[ใส่คติประจำใจของตัวเอง]”</td></tr>
+          </table>
+        </div>
+        <div class="photo-frame">
+          <div class="placeholder">รูปประจำตัว<br>(images/personal.jpg)</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>ความสนใจและงานอดิเรก</h2>
+        <p style="color:var(--ink-soft);">
+          [เขียนอธิบายสั้น ๆ เกี่ยวกับสิ่งที่ชอบทำ เช่น การอ่านหนังสือ กีฬา ดนตรี การเขียนโปรแกรม ฯลฯ]
+        </p>
+        <div>
+          <span class="tag">[งานอดิเรก 1]</span>
+          <span class="tag">[งานอดิเรก 2]</span>
+          <span class="tag">[งานอดิเรก 3]</span>
+          <span class="tag">[งานอดิเรก 4]</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>จุดเด่นและทักษะ</h2>
+        <p style="color:var(--ink-soft);">
+          [อธิบายจุดเด่นของตัวเอง เช่น ความรับผิดชอบ ความคิดสร้างสรรค์ ทักษะการทำงานเป็นทีม]
+        </p>
+        <div>
+          <span class="tag">ทักษะที่ 1</span>
+          <span class="tag">ทักษะที่ 2</span>
+          <span class="tag">ทักษะที่ 3</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>เป้าหมายในอนาคต</h2>
+        <p style="color:var(--ink-soft);margin:0;">
+          [เขียนเกี่ยวกับเป้าหมายการศึกษาต่อ อาชีพในฝัน หรือแผนชีวิตในอนาคต]
+        </p>
+      </section>
+
+    </div>
+    <footer class="page-foot">© 2569 ชื่อ–นามสกุล · สร้างด้วย HTML &amp; CSS · Hosted on GitHub Pages</footer>
+  </main>
+</div>
+
 </body>
 </html>

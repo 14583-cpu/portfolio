@@ -1,10 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
-    <title>Portfolio ภาณุภาคย์</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>หน้าหลัก | แฟ้มสะสมผลงาน</title>
+<meta name="description" content="เว็บไซต์แฟ้มสะสมผลงาน (Portfolio) ของนักเรียนชั้นมัธยมศึกษาปีที่ 6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
 </head>
-<body bgcolor="6C4ED9">
-<h1>หน้าหลัก</h1>
-<a href="personal.html">ประวัติส่วนตัว</a>
+<body>
+
+<div class="binder">
+
+  <!-- แถบเมนูสำหรับจอมือถือ -->
+  <nav class="mobile-tabbar" aria-label="เมนูหลัก (มือถือ)">
+    <a href="index.html" aria-current="page">หน้าหลัก</a>
+    <a href="personal.html">ประวัติส่วนตัว</a>
+    <a href="education.html">ประวัติการศึกษา</a>
+    <a href="awardactivities.html">ผลงาน/กิจกรรม</a>
+    <a href="contact.html">ติดต่อ</a>
+  </nav>
+
+  <!-- แถบเมนูแบบแท็บ (จอใหญ่) -->
+  <nav class="tabs" aria-label="เมนูหลัก">
+    <div class="brand">แฟ้มสะสมผลงาน<span>Student Portfolio</span></div>
+    <a class="tab" href="index.html" aria-current="page"><span class="num">01</span> หน้าหลัก</a>
+    <a class="tab" href="personal.html"><span class="num">02</span> ประวัติส่วนตัว</a>
+    <a class="tab" href="education.html"><span class="num">03</span> ประวัติการศึกษา</a>
+    <a class="tab" href="awardactivities.html"><span class="num">04</span> ผลงานและกิจกรรม</a>
+    <a class="tab" href="contact.html"><span class="num">05</span> ช่องทางติดต่อ</a>
+  </nav>
+
+  <main class="page">
+    <div class="wrap">
+
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Portfolio · ปีการศึกษา 2569</p>
+          <h1>สวัสดีครับ ผม<br>ชื่อ–นามสกุล นักเรียน</h1>
+          <p style="max-width:46ch;color:var(--ink-soft);font-size:1.05rem;">
+            นักเรียนชั้นมัธยมศึกษาปีที่ 6 แผนการเรียน [ระบุแผนการเรียน]
+            โรงเรียน [ชื่อโรงเรียน] สนใจด้าน [ระบุความสนใจ เช่น วิทยาศาสตร์คอมพิวเตอร์ / ภาษา / ศิลปะ]
+            เว็บไซต์นี้รวบรวมประวัติ ผลงาน และกิจกรรมของผมไว้ในที่เดียว
+          </p>
+          <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;">
+            <a class="btn" href="awardactivities.html">ดูผลงานของผม</a>
+            <a class="btn ghost" href="contact.html">ติดต่อผม</a>
+          </div>
+        </div>
+        <div class="photo-frame">
+          <!-- แทนที่ด้วยรูปจริง เช่น <img src="images/profile.jpg" alt="รูปโปรไฟล์"> -->
+          <div class="placeholder">ใส่รูปโปรไฟล์<br>ที่นี่<br>(images/profile.jpg)</div>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top:44px;">
+        <p class="eyebrow">เกี่ยวกับเว็บไซต์นี้</p>
+        <h2>สารบัญแฟ้มสะสมผลงาน</h2>
+        <div class="grid-2">
+          <div>
+            <h3>02 · ประวัติส่วนตัว</h3>
+            <p style="color:var(--ink-soft);margin:0;">ข้อมูลทั่วไป ความสนใจ และแนวคิดในการใช้ชีวิต</p>
+          </div>
+          <div>
+            <h3>03 · ประวัติการศึกษา</h3>
+            <p style="color:var(--ink-soft);margin:0;">เส้นทางการเรียนตั้งแต่อดีตจนถึงปัจจุบัน</p>
+          </div>
+          <div>
+            <h3>04 · ผลงานและกิจกรรม</h3>
+            <p style="color:var(--ink-soft);margin:0;">รางวัล ผลงาน และกิจกรรมที่เคยเข้าร่วม</p>
+          </div>
+          <div>
+            <h3>05 · ช่องทางติดต่อ</h3>
+            <p style="color:var(--ink-soft);margin:0;">อีเมล โซเชียลมีเดีย และช่องทางอื่น ๆ</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+    <footer class="page-foot">© 2569 ชื่อ–นามสกุล · สร้างด้วย HTML &amp; CSS · Hosted on GitHub Pages</footer>
+  </main>
+</div>
+
 </body>
 </html>
