@@ -1,20 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Space+Mono:wght@400;700&display=swap');
+
 /* ==========================================================================
-   PORTFOLIO — "แฟ้มสะสมผลงาน" (Binder) concept
-   Palette:  paper #F6F1E4 / ink #23324D / teal #3E6259 / gold #C9A227 / coral #C1584B
-   Type:     Fraunces (display) + IBM Plex Sans Thai (body) + IBM Plex Mono (labels)
+   PORTFOLIO — "Vergangenheit & Gegenwart" (Past & Present) — Germany theme
+   Concept: Bauhaus modernism (present) meets Fraktur/passport-document
+   tradition (past). Signature: departure-board tabs, passport stamp, ID-photo caption.
+   Palette:  paper #F2EEE4 / ink #1A1A1A / Prussian blue #1F3A5F /
+             Bauhaus yellow #E8A93D / Bauhaus red #C1272D
+   Type:     Fraunces (display) + IBM Plex Sans Thai (body) +
+             UnifrakturCook (blackletter accent) + Space Mono (stamp/label)
    ========================================================================== */
 
 :root {
-  --paper: #F6F1E4;
-  --paper-raised: #FFFDF7;
-  --ink: #23324D;
-  --ink-soft: #56637C;
-  --teal: #3E6259;
-  --teal-deep: #2C4740;
-  --gold: #C9A227;
-  --coral: #C1584B;
-  --line: #D8CFB8;
-  --radius: 6px;
+  --paper: #F2EEE4;
+  --paper-raised: #FBF9F3;
+  --ink: #1A1A1A;
+  --ink-soft: #5A564C;
+  --teal: #1F3A5F;        /* Prussian blue — primary accent */
+  --teal-deep: #14263D;   /* deep Prussian blue — nav background */
+  --gold: #E8A93D;        /* Bauhaus yellow */
+  --coral: #C1272D;       /* Bauhaus red */
+  --line: #D3C9AF;
+  --radius: 4px;
   --tab-w: 220px;
   --tab-w-mobile: 84px;
 }
@@ -25,7 +31,8 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--paper);
+  background-color: var(--paper);
+  background-image: repeating-linear-gradient(135deg, rgba(26,26,26,.015) 0 2px, transparent 2px 6px);
   color: var(--ink);
   font-family: "IBM Plex Sans Thai", "IBM Plex Sans", sans-serif;
   font-size: 16px;
@@ -44,7 +51,7 @@ h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 600; }
 h3 { font-size: 1.1rem; font-weight: 600; }
 
 .eyebrow {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "Space Mono", monospace;
   font-size: .78rem;
   letter-spacing: .12em;
   text-transform: uppercase;
@@ -55,18 +62,18 @@ h3 { font-size: 1.1rem; font-weight: 600; }
 }
 .eyebrow::before {
   content: "";
-  width: 22px; height: 1px;
+  width: 12px; height: 12px;
   background: var(--coral);
   display: inline-block;
 }
 
-a { color: var(--teal-deep); }
+a { color: var(--teal); }
 a:focus-visible, button:focus-visible, .tab:focus-visible {
   outline: 3px solid var(--coral);
   outline-offset: 2px;
 }
 
-/* ---------- App shell: binder tabs (left, desktop) ---------- */
+/* ---------- App shell: departure-board tabs (left, desktop) ---------- */
 .binder {
   display: flex;
   min-height: 100vh;
@@ -87,6 +94,7 @@ a:focus-visible, button:focus-visible, .tab:focus-visible {
 }
 
 .tabs .brand {
+  position: relative;
   color: var(--paper-raised);
   font-family: "Fraunces", serif;
   font-size: 1.05rem;
@@ -94,24 +102,38 @@ a:focus-visible, button:focus-visible, .tab:focus-visible {
   border-bottom: 1px solid rgba(246,241,228,.18);
   margin-bottom: 10px;
 }
+.tabs .brand::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 22px;
+  width: 13px; height: 13px;
+  background: var(--coral);
+}
+.tabs .brand::after {
+  content: "";
+  position: absolute;
+  top: 5px; right: 40px;
+  width: 13px; height: 13px;
+  border-radius: 50%;
+  background: var(--gold);
+}
 .tabs .brand span {
   display: block;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "Space Mono", monospace;
   font-size: .68rem;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: #A9C2B8;
+  color: #9FB3C8;
   margin-top: 4px;
 }
 
 .tab {
-  --n: "00";
   position: relative;
   display: flex;
   align-items: center;
   gap: 12px;
   text-decoration: none;
-  color: #D9E4DE;
+  color: #D7E0EA;
   font-size: .95rem;
   padding: 14px 20px 14px 22px;
   margin-right: 14px;
@@ -119,10 +141,11 @@ a:focus-visible, button:focus-visible, .tab:focus-visible {
   transition: transform .18s ease, background .18s ease, color .18s ease, margin .18s ease;
 }
 .tab .num {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: .72rem;
+  font-family: "UnifrakturCook", serif;
+  font-size: 1.1rem;
+  line-height: 1;
   color: var(--gold);
-  opacity: .85;
+  opacity: .9;
 }
 .tab:hover {
   background: rgba(246,241,228,.08);
@@ -134,7 +157,7 @@ a:focus-visible, button:focus-visible, .tab:focus-visible {
   color: var(--ink);
   margin-right: 0;
   transform: translateX(10px);
-  box-shadow: -2px 0 0 var(--coral) inset;
+  box-shadow: -3px 0 0 var(--coral) inset;
   font-weight: 600;
 }
 .tab[aria-current="page"] .num { color: var(--coral); }
@@ -147,7 +170,7 @@ a:focus-visible, button:focus-visible, .tab:focus-visible {
   min-width: 0;
 }
 
-/* torn / perforated top edge, like a page pulled from a binder */
+/* perforated top edge, like a form torn from a pad */
 .page::before {
   content: "";
   display: block;
@@ -169,6 +192,12 @@ a:focus-visible, button:focus-visible, .tab:focus-visible {
   border-radius: var(--radius);
   padding: 28px 30px;
   margin-bottom: 22px;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px -12px rgba(26, 26, 26, .25);
+  border-color: var(--coral);
 }
 
 .card + .card { margin-top: -4px; }
@@ -181,21 +210,44 @@ a:focus-visible, button:focus-visible, .tab:focus-visible {
 
 .tag {
   display: inline-block;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "Space Mono", monospace;
   font-size: .72rem;
   padding: 3px 10px;
   border-radius: 999px;
-  background: rgba(62,98,89,.1);
-  color: var(--teal-deep);
+  background: rgba(31,58,95,.1);
+  color: var(--teal);
   margin: 0 6px 6px 0;
 }
 
 .hero {
+  position: relative;
   display: grid;
   grid-template-columns: 1.1fr .9fr;
   gap: 40px;
   align-items: center;
   padding-top: 20px;
+}
+
+/* passport-stamp signature element (index page hero only) */
+.hero::after {
+  content: "PORTFOLIO\A AUSGESTELLT · 2026";
+  white-space: pre;
+  position: absolute;
+  top: -6px; right: 6%;
+  width: 96px; height: 96px;
+  border: 2px dashed var(--coral);
+  border-radius: 50%;
+  color: var(--coral);
+  font-family: "Space Mono", monospace;
+  font-size: .58rem;
+  letter-spacing: .06em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-11deg);
+  opacity: .85;
+  pointer-events: none;
 }
 
 .photo-frame {
@@ -215,9 +267,22 @@ a:focus-visible, button:focus-visible, .tab:focus-visible {
   border: 1px solid var(--line);
   pointer-events: none;
 }
+.photo-frame::before {
+  content: "Lichtbild";
+  position: absolute;
+  left: 10px; bottom: 10px;
+  font-family: "Space Mono", monospace;
+  font-size: .6rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: var(--paper-raised);
+  padding: 2px 7px;
+  z-index: 2;
+}
 .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
 .photo-frame .placeholder {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "Space Mono", monospace;
   font-size: .78rem;
   color: var(--ink-soft);
   text-align: center;
@@ -253,15 +318,18 @@ table.timeline th, table.timeline td {
   padding: 12px 10px;
   border-bottom: 1px solid var(--line);
   vertical-align: top;
+  transition: background .18s ease;
 }
 table.timeline th {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "Space Mono", monospace;
   font-size: .75rem;
   text-transform: uppercase;
   letter-spacing: .06em;
   color: var(--ink-soft);
   font-weight: 500;
+  border-bottom: 2px solid var(--ink);
 }
+table.timeline tr:hover td { background: rgba(31,58,95,.05); }
 
 .activity-item {
   display: grid;
@@ -272,7 +340,7 @@ table.timeline th {
 }
 .activity-item:last-child { border-bottom: none; }
 .activity-item time {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "Space Mono", monospace;
   font-size: .78rem;
   color: var(--coral);
 }
@@ -292,6 +360,7 @@ table.timeline th {
   border-radius: var(--radius);
   text-decoration: none;
   color: var(--ink);
+  transition: transform .2s ease, border-color .2s ease;
 }
 .contact-item .icon {
   width: 38px; height: 38px;
@@ -299,11 +368,11 @@ table.timeline th {
   background: var(--teal);
   color: var(--paper-raised);
   display: flex; align-items: center; justify-content: center;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "Space Mono", monospace;
   font-size: .8rem;
   flex: 0 0 auto;
 }
-.contact-item:hover { border-color: var(--coral); }
+.contact-item:hover { border-color: var(--coral); transform: translateY(-3px); }
 .contact-item strong { display: block; font-size: .95rem; }
 .contact-item span { font-size: .85rem; color: var(--ink-soft); }
 
@@ -313,7 +382,7 @@ footer.page-foot {
   padding: 0 32px 40px;
   font-size: .8rem;
   color: var(--ink-soft);
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "Space Mono", monospace;
 }
 
 /* ---------- Mobile top tab bar ---------- */
@@ -334,7 +403,7 @@ footer.page-foot {
   }
   .mobile-tabbar a {
     flex: 0 0 auto;
-    color: #D9E4DE;
+    color: #D7E0EA;
     text-decoration: none;
     font-size: .82rem;
     padding: 8px 14px;
@@ -347,6 +416,7 @@ footer.page-foot {
     font-weight: 600;
   }
   .hero { grid-template-columns: 1fr; }
+  .hero::after { top: -14px; right: 10px; width: 78px; height: 78px; font-size: .5rem; }
   .photo-frame { max-width: 260px; margin: 0 auto; }
   .grid-2, .contact-grid { grid-template-columns: 1fr; }
   .wrap { padding: 34px 20px 70px; }
