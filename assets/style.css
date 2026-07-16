@@ -313,13 +313,50 @@ table.timeline th {
 table.timeline tr:hover td { background: rgba(31,58,95,.06); }
 
 .activity-item {
-  display: grid; grid-template-columns: 90px 1fr; gap: 18px;
-  padding: 18px 0; border-bottom: 1px dashed var(--line);
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px dashed var(--line);
   transition: padding-left .2s ease;
 }
 .activity-item:hover { padding-left: 8px; }
 .activity-item:last-child { border-bottom: none; }
-.activity-item time { font-family: "Space Mono", monospace; font-size: .78rem; color: var(--coral); }
+.activity-item time { flex: 0 0 60px; font-family: "Space Mono", monospace; font-size: .78rem; color: var(--coral); padding-top: 2px; }
+.activity-thumb {
+  flex: 0 0 64px;
+  width: 64px; height: 64px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  cursor: zoom-in;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.activity-thumb:hover { transform: scale(1.06); box-shadow: 0 8px 16px -8px rgba(26,26,26,.35); }
+.activity-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.activity-body { flex: 1 1 auto; min-width: 0; }
+
+/* ---------- Lightbox (click an image to enlarge) ---------- */
+.lightbox-overlay {
+  position: fixed; inset: 0;
+  background: rgba(20,38,61,.88);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 999; padding: 24px;
+  opacity: 0; pointer-events: none;
+  transition: opacity .25s ease;
+}
+.lightbox-overlay.active { opacity: 1; pointer-events: auto; }
+.lightbox-overlay img {
+  max-width: 92vw; max-height: 88vh;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 50px rgba(0,0,0,.5);
+}
+.lightbox-close {
+  position: absolute; top: 18px; right: 26px;
+  color: #fff; font-size: 2rem; line-height: 1;
+  background: none; border: none; cursor: pointer;
+}
+.js-lightbox { cursor: zoom-in; }
 
 .contact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .contact-item {
@@ -372,7 +409,8 @@ footer.page-foot {
   .photo-frame { max-width: 260px; margin: 0 auto; }
   .grid-2, .contact-grid { grid-template-columns: 1fr; }
   .wrap { padding: 34px 20px 70px; }
-  .activity-item { grid-template-columns: 1fr; gap: 4px; }
+  .activity-item { flex-wrap: wrap; }
+  .activity-item .activity-body { flex-basis: 100%; order: 3; }
 }
 
 @media (prefers-reduced-motion: reduce) {
