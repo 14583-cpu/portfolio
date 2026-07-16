@@ -1,25 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cinzel+Decorative:wght@700&family=Space+Mono:wght@400;700&display=swap');
 
 /* ==========================================================================
-   PORTFOLIO — "Vergangenheit & Gegenwart" (Past & Present) — Germany theme
-   Concept: Bauhaus modernism (present) meets Fraktur/passport-document
-   tradition (past). Signature: departure-board tabs, passport stamp, ID-photo caption.
-   Palette:  paper #F2EEE4 / ink #1A1A1A / Prussian blue #1F3A5F /
-             Bauhaus yellow #E8A93D / Bauhaus red #C1272D
-   Type:     Fraunces (display) + IBM Plex Sans Thai (body) +
-             UnifrakturCook (blackletter accent) + Space Mono (stamp/label)
+   PORTFOLIO — "Antiqua Roma" theme
+   Concept: aged papyrus, imperial purple + Pompeian red + antique gold,
+   Roman inscription lettering (Cinzel), wax-seal medallion, laurel/coin badge.
+   Palette:  papyrus #EFE3C8 / umber ink #2B1B12 / imperial purple #4B1E3D /
+             antique gold #C9A227 / Pompeian red #9C3B2E
+   Type:     Cinzel (display, Roman inscription) + IBM Plex Sans Thai (body) +
+             Cinzel Decorative (ornamental accent) + Space Mono (labels)
    ========================================================================== */
 
 :root {
-  --paper: #F2EEE4;
-  --paper-raised: #FBF9F3;
-  --ink: #1A1A1A;
-  --ink-soft: #5A564C;
-  --teal: #1F3A5F;        /* Prussian blue — primary accent */
-  --teal-deep: #14263D;   /* deep Prussian blue — nav background */
-  --gold: #E8A93D;        /* Bauhaus yellow */
-  --coral: #C1272D;       /* Bauhaus red */
-  --line: #D3C9AF;
+  --paper: #EFE3C8;
+  --paper-raised: #F8F1DE;
+  --ink: #2B1B12;
+  --ink-soft: #6B5A46;
+  --teal: #4B1E3D;        /* imperial purple — primary accent */
+  --teal-deep: #2E1226;   /* deep imperial purple — nav background */
+  --gold: #C9A227;        /* antique gold */
+  --coral: #9C3B2E;       /* Pompeian red / wax-seal red */
+  --line: #D6C39C;
   --radius: 4px;
   --tab-w: 220px;
   --tab-w-mobile: 84px;
@@ -32,7 +32,10 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background-color: var(--paper);
-  background-image: repeating-linear-gradient(135deg, rgba(26,26,26,.015) 0 2px, transparent 2px 6px);
+  background-image:
+    radial-gradient(ellipse at 15% 20%, rgba(75,30,61,.05) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 75%, rgba(156,59,46,.05) 0%, transparent 45%),
+    repeating-linear-gradient(135deg, rgba(43,27,18,.02) 0 2px, transparent 2px 6px);
   color: var(--ink);
   font-family: "IBM Plex Sans Thai", "IBM Plex Sans", sans-serif;
   font-size: 16px;
@@ -40,10 +43,10 @@ body {
 }
 
 h1, h2, h3, .display {
-  font-family: "Fraunces", "Noto Serif Thai", serif;
+  font-family: "Cinzel", "Noto Serif Thai", serif;
   color: var(--ink);
   margin: 0 0 .4em;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
 }
 
 h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 600; }
@@ -64,6 +67,7 @@ h3 { font-size: 1.1rem; font-weight: 600; }
   content: "";
   width: 12px; height: 12px;
   background: var(--coral);
+  border-radius: 50%;
   display: inline-block;
 }
 
@@ -73,7 +77,7 @@ a:focus-visible, button:focus-visible, .tab:focus-visible {
   outline-offset: 2px;
 }
 
-/* ---------- App shell: departure-board tabs (left, desktop) ---------- */
+/* ---------- App shell: tabs (left, desktop) ---------- */
 .binder {
   display: flex;
   min-height: 100vh;
@@ -96,12 +100,13 @@ a:focus-visible, button:focus-visible, .tab:focus-visible {
 .tabs .brand {
   position: relative;
   color: var(--paper-raised);
-  font-family: "Fraunces", serif;
+  font-family: "Cinzel", serif;
   font-size: 1.05rem;
   padding: 0 22px 22px;
   border-bottom: 1px solid rgba(246,241,228,.18);
   margin-bottom: 10px;
 }
+/* coin + tablet medallion badge */
 .tabs .brand::before {
   content: "";
   position: absolute;
@@ -123,7 +128,7 @@ a:focus-visible, button:focus-visible, .tab:focus-visible {
   font-size: .68rem;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: #9FB3C8;
+  color: #C9B79E;
   margin-top: 4px;
 }
 
@@ -133,7 +138,7 @@ a:focus-visible, button:focus-visible, .tab:focus-visible {
   align-items: center;
   gap: 12px;
   text-decoration: none;
-  color: #D7E0EA;
+  color: #E4D5BE;
   font-size: .95rem;
   padding: 14px 20px 14px 22px;
   margin-right: 14px;
@@ -141,8 +146,8 @@ a:focus-visible, button:focus-visible, .tab:focus-visible {
   transition: transform .18s ease, background .18s ease, color .18s ease, margin .18s ease;
 }
 .tab .num {
-  font-family: "UnifrakturCook", serif;
-  font-size: 1.1rem;
+  font-family: "Cinzel Decorative", serif;
+  font-size: .95rem;
   line-height: 1;
   color: var(--gold);
   opacity: .9;
@@ -170,14 +175,12 @@ a:focus-visible, button:focus-visible, .tab:focus-visible {
   min-width: 0;
 }
 
-/* perforated top edge, like a form torn from a pad */
+/* mosaic-tile border strip along the top of each page */
 .page::before {
   content: "";
   display: block;
-  height: 10px;
-  background-image: radial-gradient(circle at 50% 0, transparent 4px, var(--teal-deep) 4.5px);
-  background-size: 20px 10px;
-  background-position: 10px 0;
+  height: 8px;
+  background: repeating-linear-gradient(90deg, var(--gold) 0 18px, var(--teal-deep) 18px 36px);
 }
 
 .wrap {
@@ -187,6 +190,7 @@ a:focus-visible, button:focus-visible, .tab:focus-visible {
 }
 
 .card {
+  position: relative;
   background: var(--paper-raised);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -194,9 +198,17 @@ a:focus-visible, button:focus-visible, .tab:focus-visible {
   margin-bottom: 22px;
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
+.card::before {
+  content: "❧";
+  position: absolute;
+  top: 10px; right: 16px;
+  color: var(--gold);
+  font-size: 1.1rem;
+  opacity: .55;
+}
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 14px 28px -12px rgba(26, 26, 26, .25);
+  box-shadow: 0 14px 28px -12px rgba(43, 27, 18, .3);
   border-color: var(--coral);
 }
 
@@ -229,7 +241,7 @@ a:focus-visible, button:focus-visible, .tab:focus-visible {
   font-size: .72rem;
   padding: 3px 10px;
   border-radius: 999px;
-  background: rgba(31,58,95,.1);
+  background: rgba(75,30,61,.1);
   color: var(--teal);
   margin: 0 6px 6px 0;
 }
@@ -243,25 +255,25 @@ a:focus-visible, button:focus-visible, .tab:focus-visible {
   padding-top: 20px;
 }
 
-/* passport-stamp signature element (index page hero only) */
+/* wax-seal medallion — signature element (index page hero only) */
 .hero::after {
-  content: "PORTFOLIO\A AUSGESTELLT · 2026";
-  white-space: pre;
+  content: "S · P · Q · R";
   position: absolute;
   top: -6px; right: 6%;
   width: 96px; height: 96px;
-  border: 2px dashed var(--coral);
   border-radius: 50%;
-  color: var(--coral);
-  font-family: "Space Mono", monospace;
-  font-size: .58rem;
-  letter-spacing: .06em;
+  background: var(--coral);
+  border: 3px solid var(--gold);
+  color: var(--paper-raised);
+  font-family: "Cinzel Decorative", serif;
+  font-size: .62rem;
+  letter-spacing: .04em;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: rotate(-11deg);
-  opacity: .85;
+  transform: rotate(-9deg);
+  box-shadow: 0 6px 14px -6px rgba(43,27,18,.5), inset 0 0 0 2px rgba(0,0,0,.15);
   pointer-events: none;
 }
 
@@ -283,12 +295,12 @@ a:focus-visible, button:focus-visible, .tab:focus-visible {
   pointer-events: none;
 }
 .photo-frame::before {
-  content: "Lichtbild";
+  content: "IMAGO";
   position: absolute;
   left: 10px; bottom: 10px;
   font-family: "Space Mono", monospace;
   font-size: .6rem;
-  letter-spacing: .08em;
+  letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--ink-soft);
   background: var(--paper-raised);
@@ -328,6 +340,7 @@ a:focus-visible, button:focus-visible, .tab:focus-visible {
 .btn.ghost:hover { background: var(--ink); color: var(--paper) !important; }
 
 table.timeline { width: 100%; border-collapse: collapse; }
+table.timeline { border-top: 3px double var(--gold); }
 table.timeline th, table.timeline td {
   text-align: left;
   padding: 12px 10px;
@@ -344,7 +357,7 @@ table.timeline th {
   font-weight: 500;
   border-bottom: 2px solid var(--ink);
 }
-table.timeline tr:hover td { background: rgba(31,58,95,.05); }
+table.timeline tr:hover td { background: rgba(75,30,61,.05); }
 
 .activity-item {
   display: grid;
@@ -386,6 +399,7 @@ table.timeline tr:hover td { background: rgba(31,58,95,.05); }
   font-family: "Space Mono", monospace;
   font-size: .8rem;
   flex: 0 0 auto;
+  box-shadow: 0 0 0 2px var(--gold);
 }
 .contact-item:hover { border-color: var(--coral); transform: translateY(-3px); }
 .contact-item strong { display: block; font-size: .95rem; }
@@ -418,7 +432,7 @@ footer.page-foot {
   }
   .mobile-tabbar a {
     flex: 0 0 auto;
-    color: #D7E0EA;
+    color: #E4D5BE;
     text-decoration: none;
     font-size: .82rem;
     padding: 8px 14px;
@@ -431,7 +445,7 @@ footer.page-foot {
     font-weight: 600;
   }
   .hero { grid-template-columns: 1fr; }
-  .hero::after { top: -14px; right: 10px; width: 78px; height: 78px; font-size: .5rem; }
+  .hero::after { top: -14px; right: 10px; width: 78px; height: 78px; font-size: .52rem; }
   .photo-frame { max-width: 260px; margin: 0 auto; }
   .grid-2, .contact-grid { grid-template-columns: 1fr; }
   .wrap { padding: 34px 20px 70px; }
